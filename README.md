@@ -24,7 +24,7 @@ os comentários `# TODO` — é ali que vocês vão escrever código.
 ## Como começar
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/leandro-abilio/mini-projeto-todo-list.git
 cd gerenciador-tarefas
 ```
 
