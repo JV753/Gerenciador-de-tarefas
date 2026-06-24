@@ -32,7 +32,11 @@ tarefas = []
 # =====================================================================
 
 def adicionar_tarefa(titulo, prioridade="media"):
+    tarefa = {'titulo':titulo,'concluida':False,'prioridade':prioridade}
+    tarefas.append(tarefa)
+    print(f"Tarefa {titulo} adicionada")
     """
+
     Cria uma nova tarefa e adiciona à lista `tarefas`.
 
     A tarefa deve ser um dicionário com as chaves:
@@ -43,14 +47,24 @@ def adicionar_tarefa(titulo, prioridade="media"):
     Depois de adicionar, exiba uma mensagem confirmando que a tarefa
     foi criada (pode usar print).
     """
-    # TODO (Aula 1): crie o dicionário da tarefa
-    # TODO (Aula 1): adicione o dicionário à lista `tarefas`
-    # TODO (Aula 1): exiba uma mensagem de confirmação
+   
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
 
 def listar_tarefas():
+    if len(tarefas) == 0:
+          print("Não há tarefas cadastradas")
+          return 
+    else: 
+        for index, itens in enumerate(tarefas, start=1):
+            if itens['convluida'] == True:
+                status = "[X]"
+            else:
+                status = "[ ]"
+            print(f"{index}. {status} {itens['titulo']} (prioridade:{itens ['prioridade']})")
+    pass        
+    
     """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
 
@@ -75,6 +89,14 @@ def listar_tarefas():
 # =====================================================================
 
 def concluir_tarefa(indice):
+    if indice < 1 or index>len(tarefas):
+        print("Numero de tarefa invalido.")
+        return 
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+         if indice == index:
+            itens['concluida'] = True
+            print(f"Tarefa {index} concluida")
     """
     Marca como concluída a tarefa na posição `indice` (começando em 1).
 
@@ -96,6 +118,13 @@ def concluir_tarefa(indice):
 
 
 def remover_tarefa(indice):
+    if indice < 1 or index>len(tarefas):
+        print("Numero de tarefa invalido.")
+        return 
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            if indice == index:
+                tarefas.pop(index-1)
     """
     Remove da lista a tarefa na posição `indice` (começando em 1).
 
