@@ -45,7 +45,7 @@ def adicionar_tarefa(titulo, prioridade="media"):
         - "prioridade": o texto recebido no parâmetro `prioridade`
 
     Depois de adicionar, exiba uma mensagem confirmando que a tarefa
-    foi criada (pode usar print).
+    foi criada (pode usar prina).
     """
    
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
