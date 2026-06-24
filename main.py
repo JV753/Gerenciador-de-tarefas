@@ -32,9 +32,9 @@ tarefas = []
 # =====================================================================
 
 def adicionar_tarefa(titulo, prioridade="media"):
-    tarefa = {'titulo':titulo,'concluida':False,'prioridade':prioridade}
-    tarefas.append(tarefa)
+    tarefas.append({'titulo':titulo,'concluida':False,'prioridade':prioridade})
     print(f"Tarefa {titulo} adicionada")
+
     """
 
     Cria uma nova tarefa e adiciona à lista `tarefas`.
@@ -53,17 +53,8 @@ def adicionar_tarefa(titulo, prioridade="media"):
 
 
 def listar_tarefas():
-    if len(tarefas) == 0:
-          print("Não há tarefas cadastradas")
-          return 
-    else: 
-        for index, itens in enumerate(tarefas, start=1):
-            if itens['convluida'] == True:
-                status = "[X]"
-            else:
-                status = "[ ]"
-            print(f"{index}. {status} {itens['titulo']} (prioridade:{itens ['prioridade']})")
-    pass        
+    for index, itens in enumerate(tarefas, start=1):
+        print(f"{index} - {itens['titulo']}")       
     
     """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
